@@ -39,10 +39,10 @@ typedef struct {
   unsigned int ARR;
 } tim2_t, tim3_t, tim4_t, tim5_t;
 
-extern volatile tim2 TIM2;
-extern volatile tim3 TIM3;
-extern volatile tim4 TIM4;
-extern volatile tim5 TIM5;
+extern volatile tim2_t TIM2;
+extern volatile tim3_t TIM3;
+extern volatile tim4_t TIM4;
+extern volatile tim5_t TIM5;
 
 #if __has_include(<cstddef>)
 #include <cstddef>
