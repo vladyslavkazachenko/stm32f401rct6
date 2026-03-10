@@ -46,16 +46,16 @@ extern volatile tim5_t TIM5;
 
 #if __has_include(<cstddef>)
 #include <cstddef>
-static_assert(offsetof(decltype(tim2_t), CR1) == 0x00);
-static_assert(offsetof(decltype(tim2_t), CR2) == 0x04);
-static_assert(offsetof(decltype(tim2_t), SMCR) == 0x08);
-static_assert(offsetof(decltype(tim2_t), DIER) == 0x0C);
-static_assert(offsetof(decltype(tim2_t), SR) == 0x10);
-static_assert(offsetof(decltype(tim2_t), EGR) == 0x14);
-static_assert(offsetof(decltype(tim2_t), CCMR1) == 0x18);
-static_assert(offsetof(decltype(tim2_t), CCMR2) == 0x1C);
-static_assert(offsetof(decltype(tim2_t), CCER) == 0x20);
-static_assert(offsetof(decltype(tim2_t), CNT) == 0x24);
-static_assert(offsetof(decltype(tim2_t), PSC) == 0x28);
-static_assert(offsetof(decltype(tim2_t), ARR) == 0x2C);
+static_assert(offsetof(tim2_t, CR1) == 0x00);
+static_assert(offsetof(tim2_t, CR2) == 0x04);
+static_assert(offsetof(tim2_t, SMCR) == 0x08);
+static_assert(offsetof(tim2_t, DIER) == 0x0C);
+static_assert(offsetof(tim2_t, SR) == 0x10);
+static_assert(offsetof(tim2_t, EGR) == 0x14);
+static_assert(offsetof(tim2_t, CCMR1) == 0x18);
+static_assert(offsetof(tim2_t, CCMR2) == 0x1C);
+static_assert(offsetof(tim2_t, CCER) == 0x20);
+static_assert(offsetof(tim2_t, CNT) == 0x24);
+static_assert(offsetof(tim2_t, PSC) == 0x28);
+static_assert(offsetof(tim2_t, ARR) == 0x2C);
 #endif
