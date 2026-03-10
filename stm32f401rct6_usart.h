@@ -31,7 +31,32 @@ struct usart_t {
     CR1_UE,
   };
   unsigned int CR2;
+  enum {
+    CR2_ADD = 0,
+    CR2_LBDL = 5,
+    CR2_LBDIE = 6,
+    CR2_LBCL = 8,
+    CR2_CPHA = 9,
+    CR2_CPOL = 10,
+    CR2_CLKEN = 11,
+    CR2_STOP = 12,
+    CR2_LINEN = 14,
+  };
   unsigned int CR3;
+  enum {
+    CR3_EIE = 0,
+    CR3_IREN = 1,
+    CR3_IRLP = 2,
+    CR3_HDSEL = 3,
+    CR3_NACK = 4,
+    CR3_SCEN = 5,
+    CR3_DMAR = 6,
+    CR3_DMAT = 7,
+    CR3_RTSE = 8,
+    CR3_CTSE = 9,
+    CR3_CTSIE = 10,
+    CR3_ONEBIT = 11,
+  };
   unsigned int GTPR;
 };
 
