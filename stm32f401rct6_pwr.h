@@ -1,5 +1,7 @@
 #pragma once
 
+static_assert(sizeof(unsigned int) == 4);
+
 struct pwr_t {
   unsigned int CR;
   enum {
@@ -15,3 +17,9 @@ struct pwr_t {
 };
 
 extern volatile pwr_t PWR;
+
+#if __has_include(<cstddef>)
+#include <cstddef>
+static_assert(offsetof(pwr_t, CR) == 0x00);
+static_assert(offsetof(pwr_t, CSR) == 0x04);
+#endif
