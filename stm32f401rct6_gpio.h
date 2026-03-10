@@ -1,5 +1,7 @@
 #pragma once
 
+static_assert(sizeof(unsigned int) == 4);
+
 struct gpio_t {
   unsigned int MODER;
   enum {
@@ -25,15 +27,18 @@ struct gpio_t {
   unsigned int AFRH;
 };
 
-extern volatile gpio_t GPIOA;
+extern volatile gpio_t GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOH;
 
-static_assert(__builtin_offsetof(decltype(GPIOA), MODER) == 0x00);
-static_assert(__builtin_offsetof(decltype(GPIOA), OTYPER) == 0x04);
-static_assert(__builtin_offsetof(decltype(GPIOA), OSPEEDR) == 0x08);
-static_assert(__builtin_offsetof(decltype(GPIOA), PUPDR) == 0x0C);
-static_assert(__builtin_offsetof(decltype(GPIOA), IDR) == 0x10);
-static_assert(__builtin_offsetof(decltype(GPIOA), ODR) == 0x14);
-static_assert(__builtin_offsetof(decltype(GPIOA), BSRR) == 0x18);
-static_assert(__builtin_offsetof(decltype(GPIOA), LCKR) == 0x1C);
-static_assert(__builtin_offsetof(decltype(GPIOA), AFRL) == 0x20);
-static_assert(__builtin_offsetof(decltype(GPIOA), AFRH) == 0x24);
+#if __has_include(<cstddef>)
+#include <cstddef>
+static_assert(offsetof(gpio_t, MODER) == 0x00);
+static_assert(offsetof(gpio_t, OTYPER) == 0x04);
+static_assert(offsetof(gpio_t, OSPEEDR) == 0x08);
+static_assert(offsetof(gpio_t, PUPDR) == 0x0C);
+static_assert(offsetof(gpio_t, IDR) == 0x10);
+static_assert(offsetof(gpio_t, ODR) == 0x14);
+static_assert(offsetof(gpio_t, BSRR) == 0x18);
+static_assert(offsetof(gpio_t, LCKR) == 0x1C);
+static_assert(offsetof(gpio_t, AFRL) == 0x20);
+static_assert(offsetof(gpio_t, AFRH) == 0x24);
+#endif
