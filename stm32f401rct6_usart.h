@@ -5,7 +5,16 @@ static_assert(sizeof(unsigned int) == 4);
 struct usart_t {
   unsigned int SR;
   enum {
+    SR_PE = 0,
+    SR_FE = 1,
+    SR_NE = 2,
+    SR_ORE = 3,
+    SR_IDLE = 4,
+    SR_RXNE = 5,
+    SR_TC = 6,
     SR_TXE = 7,
+    SR_LBD = 8,
+    SR_CTS = 9,
   };
   unsigned int DR;
   unsigned int BRR;
