@@ -73,11 +73,11 @@ extern volatile usart_t USART1;
 
 #if __has_include(<cstddef>)
 #include <cstddef>
-static_assert(offsetof(decltype(usart_t), SR) == 0x00);
-static_assert(offsetof(decltype(usart_t), DR) == 0x04);
-static_assert(offsetof(decltype(usart_t), BRR) == 0x08);
-static_assert(offsetof(decltype(usart_t), CR1) == 0x0C);
-static_assert(offsetof(decltype(usart_t), CR2) == 0x10);
-static_assert(offsetof(decltype(usart_t), CR3) == 0x14);
-static_assert(offsetof(decltype(usart_t), GTPR) == 0x18);
+static_assert(offsetof(usart_t, SR) == 0x00);
+static_assert(offsetof(usart_t, DR) == 0x04);
+static_assert(offsetof(usart_t, BRR) == 0x08);
+static_assert(offsetof(usart_t, CR1) == 0x0C);
+static_assert(offsetof(usart_t, CR2) == 0x10);
+static_assert(offsetof(usart_t, CR3) == 0x14);
+static_assert(offsetof(usart_t, GTPR) == 0x18);
 #endif
