@@ -7,6 +7,7 @@ struct rtc_t {
   enum {
     CR_WUCKSEL = 0,
     CR_WUTE = 10,
+    CR_WUTIE = 14,
   };
   unsigned int ISR;
   enum {
