@@ -84,10 +84,10 @@ volatile extern exti_t EXTI;
 
 #if __has_include(<cstddef>)
 #include <cstddef>
-static_assert(offsetof(exit_t, IMR) == 0x00);
-static_assert(offsetof(exit_t, EMR) == 0x04);
-static_assert(offsetof(exit_t, RTSR) == 0x08);
-static_assert(offsetof(exit_t, FTSR) == 0x0C);
-static_assert(offsetof(exit_t, SWIER) == 0x10);
-static_assert(offsetof(exit_t, PR) == 0x14);
+static_assert(offsetof(exti_t, IMR) == 0x00);
+static_assert(offsetof(exti_t, EMR) == 0x04);
+static_assert(offsetof(exti_t, RTSR) == 0x08);
+static_assert(offsetof(exti_t, FTSR) == 0x0C);
+static_assert(offsetof(exti_t, SWIER) == 0x10);
+static_assert(offsetof(exti_t, PR) == 0x14);
 #endif
