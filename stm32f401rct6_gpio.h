@@ -8,7 +8,19 @@ struct gpio_t {
     MODER0 = 0,
     MODER1 = 2,
     MODER2 = 4,
+    MODER3 = 6,
+    MODER4 = 8,
+    MODER5 = 10,
+    MODER6 = 12,
+    MODER7 = 14,
+    MODER8 = 16,
     MODER9 = 18,
+    MODER10 = 20,
+    MODER11 = 22,
+    MODER12 = 24,
+    MODER13 = 26,
+    MODER14 = 28,
+    MODER15 = 30,
   };
   unsigned int OTYPER;
   unsigned int OSPEEDR;
