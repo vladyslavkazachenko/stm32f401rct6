@@ -42,6 +42,7 @@ struct rcc_t {
   unsigned int APB2ENR;
   enum {
     APB2ENR_USART1EN = 4,
+    APB2ENR_SPI1EN = 12,
   };
   unsigned int RESERVED7;
   unsigned int RESERVED8;
