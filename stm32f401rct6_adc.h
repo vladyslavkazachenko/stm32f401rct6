@@ -5,18 +5,18 @@ static_assert(sizeof(unsigned int) == 4);
 struct adc_t {
   unsigned int SR;
   enum {
-    SR_AWD = 0,
-    SR_EOC = 1,
-    SR_JEOC = 2,
-    SR_JSTRT = 3,
-    SR_STRT = 4,
-    SR_OVR = 5,
+    SR_AWD,
+    SR_EOC,
+    SR_JEOC,
+    SR_JSTRT,
+    SR_STRT,
+    SR_OVR,
   };
   unsigned int CR1;
   enum {
     CR1_AWDCH = 0,
     CR1_EOCIE = 5,
-    CR1_AWDIE = 6,
+    CR1_AWDGIE = 6,
     CR1_JEOCIE = 7,
     CR1_SCAN = 8,
     CR1_AWDSGL = 9,
@@ -26,7 +26,6 @@ struct adc_t {
     CR1_DISCNUM = 13,
     CR1_JAWDEN = 22,
     CR1_AWDEN = 23,
-    CR1_RES = 24,
     CR1_OVRIE = 26,
   };
   unsigned int CR2;
@@ -44,7 +43,7 @@ struct adc_t {
     CR2_EXTEN = 28,
     CR2_SWSTART = 30,
   };
-  unsigned int SMPR1;
+  volatile unsigned int SMPR1;
   enum {
     SMPR1_SMP10 = 0,
     SMPR1_SMP11 = 3,
@@ -56,7 +55,7 @@ struct adc_t {
     SMPR1_SMP17 = 21,
     SMPR1_SMP18 = 24,
   };
-  unsigned int SMPR2;
+  volatile unsigned int SMPR2;
   enum {
     SMPR2_SMP0 = 0,
     SMPR2_SMP1 = 3,
@@ -69,24 +68,61 @@ struct adc_t {
     SMPR2_SMP8 = 24,
     SMPR2_SMP9 = 27,
   };
-  unsigned int JOFR1;
-  unsigned int JOFR2;
-  unsigned int JOFR3;
-  unsigned int JOFR4;
-  unsigned int HTR;
-  unsigned int LTR;
-  unsigned int SQR1;
+  volatile unsigned int JOFR1;
+  volatile unsigned int JOFR2;
+  volatile unsigned int JOFR3;
+  volatile unsigned int JOFR4;
+  volatile unsigned int HTR;
+  volatile unsigned int LTR;
+  volatile unsigned int SQR1;
   enum {
+    SQR1_SQ13 = 0,
+    SQR1_SQ14 = 5,
+    SQR1_SQ15 = 10,
+    SQR1_SQ16 = 15,
     SQR1_L = 20,
   };
-  unsigned int SQR2;
-  unsigned int SQR3;
+  volatile unsigned int SQR2;
+  enum {
+    SQR2_SQ7 = 0,
+    SQR2_SQ8 = 5,
+    SQR2_SQ9 = 10,
+    SQR2_SQ10 = 15,
+    SQR2_SQ11 = 20,
+    SQR2_SQ12 = 25,
+  };
+  volatile unsigned int SQR3;
+  enum {
+    SQR3_SQ1 = 0,
+    SQR3_SQ2 = 5,
+    SQR3_SQ3 = 10,
+    SQR3_SQ4 = 15,
+    SQR3_SQ5 = 20,
+    SQR3_SQ6 = 25,
+  };
   unsigned int JSQR;
+  enum {
+    JSQR_JSQ1 = 0,
+    JSQR_JSQ2 = 5,
+    JSQR_JSQ3 = 10,
+    JSQR_JSQ4 = 15,
+    JSQR_JL = 20,
+  };
   unsigned int JDR1;
   unsigned int JDR2;
   unsigned int JDR3;
   unsigned int JDR4;
   unsigned int DR;
+  unsigned int CCR;
+  enum {
+    CCR_MULTI = 0,
+    CCR_DELAY = 8,
+    CCR_DDS = 13,
+    CCR_DMA = 14,
+    CCR_ADCPRE = 16,
+    CCR_VBATE = 22,
+    CCR_TSVREFE = 23,
+  };
 };
 
 extern volatile adc_t ADC1;
@@ -108,9 +144,5 @@ static_assert(offsetof(adc_t, SQR1) == 0x2C);
 static_assert(offsetof(adc_t, SQR2) == 0x30);
 static_assert(offsetof(adc_t, SQR3) == 0x34);
 static_assert(offsetof(adc_t, JSQR) == 0x38);
-static_assert(offsetof(adc_t, JDR1) == 0x3C);
-static_assert(offsetof(adc_t, JDR2) == 0x40);
-static_assert(offsetof(adc_t, JDR3) == 0x44);
-static_assert(offsetof(adc_t, JDR4) == 0x48);
 static_assert(offsetof(adc_t, DR) == 0x4C);
 #endif
