@@ -41,8 +41,17 @@ struct rcc_t {
   };
   unsigned int APB2ENR;
   enum {
+    APB2ENR_TIM1EN = 0,
     APB2ENR_USART1EN = 4,
+    APB2ENR_USART6EN = 5,
+    APB2ENR_ADC1EN = 8,
+    APB2ENR_SDIOEN = 11,
     APB2ENR_SPI1EN = 12,
+    APB2ENR_SPI4EN = 13,
+    APB2ENR_SYSCFGEN = 14,
+    APB2ENR_TIM9EN = 16,
+    APB2ENR_TIM10EN = 17,
+    APB2ENR_TIM11EN = 18,
   };
   unsigned int RESERVED7;
   unsigned int RESERVED8;
