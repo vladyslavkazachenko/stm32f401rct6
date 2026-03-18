@@ -37,6 +37,7 @@ struct rcc_t {
   unsigned int APB1ENR;
   enum {
     APB1ENR_TIM2EN = 0,
+    APB1ENR_TIM5EN = 3,
     APB1ENR_PWREN = 28,
   };
   unsigned int APB2ENR;
