@@ -66,6 +66,9 @@ typedef struct {
   unsigned int CNT;
   unsigned int PSC;
   unsigned int ARR;
+  unsigned int CCR1;
+  unsigned int CCR2;
+  unsigned int CCR3;
 } tim2_t, tim3_t, tim4_t, tim5_t;
 
 extern volatile tim2_t TIM2;
