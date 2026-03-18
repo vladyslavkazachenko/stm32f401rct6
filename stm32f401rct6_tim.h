@@ -33,7 +33,36 @@ typedef struct {
   unsigned int EGR;
   unsigned int CCMR1;
   unsigned int CCMR2;
+  enum {
+    CCMR2_CC3S = 0,
+    CCMR2_OC3FE = 2,
+    CCMR2_OC3PE = 3,
+    CCMR2_OC3M = 4,
+    CCMR2_OC3CE = 7,
+    CCMR2_CC4S = 8,
+    CCMR2_OC4FE = 10,
+    CCMR2_OC4PE = 11,
+    CCMR2_OC4M = 12,
+    CCMR2_OC4CE = 15
+  };
   unsigned int CCER;
+  enum {
+    CCER_CC1E = 0,
+    CCER_CC1P = 1,
+    CCER_CC1NE = 2,
+    CCER_CC1NP = 3,
+    CCER_CC2E = 4,
+    CCER_CC2P = 5,
+    CCER_CC2NE = 6,
+    CCER_CC2NP = 7,
+    CCER_CC3E = 8,
+    CCER_CC3P = 9,
+    CCER_CC3NE = 10,
+    CCER_CC3NP = 11,
+    CCER_CC4E = 12,
+    CCER_CC4P = 13,
+    CCER_CC4NP = 15
+  };
   unsigned int CNT;
   unsigned int PSC;
   unsigned int ARR;
