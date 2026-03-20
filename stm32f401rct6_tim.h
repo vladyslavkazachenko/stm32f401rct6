@@ -17,6 +17,20 @@ typedef struct {
   unsigned int CR2;
   unsigned int SMCR;
   unsigned int DIER;
+  enum {
+    DIER_UIE = 0,
+    DIER_CC1IE = 1,
+    DIER_CC2IE = 2,
+    DIER_CC3IE = 3,
+    DIER_CC4IE = 4,
+    DIER_TIE = 6,
+    DIER_UDE = 8,
+    DIER_CC1DE = 9,
+    DIER_CC2DE = 10,
+    DIER_CC3DE = 11,
+    DIER_CC4DE = 12,
+    DIER_TDE = 14
+  };
   unsigned int SR;
   enum {
     SR_UIF = 0,
