@@ -26,6 +26,7 @@ struct adc_t {
     CR1_DISCNUM = 13,
     CR1_JAWDEN = 22,
     CR1_AWDEN = 23,
+    CR1_RES = 24,
     CR1_OVRIE = 26,
   };
   unsigned int CR2;
