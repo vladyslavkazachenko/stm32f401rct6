@@ -17,6 +17,7 @@ struct rcc_t {
   };
   unsigned int CFGR;
   enum {
+    CFGR_SW = 0,
     CFGR_SWS = 2,
   };
   unsigned int CIR;
