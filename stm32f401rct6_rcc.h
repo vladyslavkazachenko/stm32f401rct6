@@ -3,6 +3,14 @@
 struct rcc_t {
   unsigned int CR;
   unsigned int PLLCFGR;
+  enum {
+    PLLCFGR_M = 0,
+    PLLCFGR_N = 6,
+    PLLCFGR_P = 16,
+    PLLCFGR_SRC = 22,
+    PLLCFGR_Q = 24,
+
+  };
   unsigned int CFGR;
   enum {
     CFGR_SWS = 2,
