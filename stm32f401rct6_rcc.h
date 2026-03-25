@@ -2,6 +2,10 @@
 
 struct rcc_t {
   unsigned int CR;
+  enum {
+    CR_PLLON = 24,
+    CR_PLLRDY = 25,
+  };
   unsigned int PLLCFGR;
   enum {
     PLLCFGR_M = 0,
