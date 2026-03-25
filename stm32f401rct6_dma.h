@@ -48,7 +48,7 @@ struct dma_t {
     HISR_TEIF7,
     HISR_HTIF7,
     HISR_TCIF7,
-  }
+  };
   unsigned int LIFCR;
   unsigned int HIFCR;
   unsigned int S0CR;
