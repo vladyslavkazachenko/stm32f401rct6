@@ -97,8 +97,25 @@ struct dma_t {
   };
   unsigned int S0CR;
   enum {
-    S0CR_EN,
-    S1CR_EN = S0CR_EN,
+    SxCR_EN,
+    SxCR_DMEIE,
+    SxCR_TEIE,
+    SxCR_HTIE,
+    SxCR_TCIE,
+    SxCR_PFCTRL,
+    SxCR_DIR,
+    SxCR_CIRC = 8,
+    SxCR_PINC,
+    SxCR_MINC,
+    SxCR_PSIZE = 11,
+    SxCR_MSIZE = 13,
+    SxCR_PINCOS = 15,
+    SxCR_PL,
+    SxCR_DBM = 18,
+    SxCR_CT,
+    SxCR_PBURST = 21,
+    SxCR_MBURST = 23,
+    SxCR_CHSEL = 25,
   };
   unsigned int S0NDTR;
   unsigned int S0PAR;
