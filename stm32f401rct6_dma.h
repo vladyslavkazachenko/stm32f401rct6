@@ -96,6 +96,10 @@ struct dma_t {
     HIFCR_CTCIF7,
   };
   unsigned int S0CR;
+  enum {
+    S0CR_EN,
+    S1CR_EN = S0CR_EN,
+  };
   unsigned int S0NDTR;
   unsigned int S0PAR;
   unsigned int S0M0AR;
